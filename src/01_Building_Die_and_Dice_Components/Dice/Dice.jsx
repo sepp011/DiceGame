@@ -15,9 +15,10 @@ export default function Dice(){
             <h1>Dice Game</h1>
             <h4>Sum 7 to win</h4>
         <div className="Dice">
-            <Die valueRoll={values[0]}/>
-            <Die valueRoll={values[1]}/>
-            
+            {values.map((val, index)=>(
+                <Die key={index} valueRoll={val}/>
+            ))}
+                       
         </div>
         {win?<h1>You Win!!</h1>: null}
         <button onClick={rollAgain}>{win?"Start again": "Roll again"}</button>
