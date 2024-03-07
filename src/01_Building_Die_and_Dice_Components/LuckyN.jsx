@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Dice from "./Dice/Dice";
 import { rollVal, sum } from "../utils";
+import Button from "../Button";
 
 export default function LuckyN({numOfDice, sumToWin}){
     const [values, setValues] = useState(Array.from({length: numOfDice}, () => rollVal()));
@@ -14,7 +15,7 @@ export default function LuckyN({numOfDice, sumToWin}){
             <h4>Sum {sumToWin} to win</h4>
             <Dice diceValuesArr = {values}/>
             {win?<h1>You Win!!</h1>: null}
-        <button onClick={rollAgain}>{win?"Start again": "Roll again"}</button>
+            <Button stateUpdateFunc = {rollAgain} didWin={win}/>
         </main>
     )
 }
