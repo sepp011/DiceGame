@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-     <LuckyN numOfDice={3} sumToWin={13}/>
+     <LuckyN numOfDice={5} sumToWin={20}/>
      </>
   )
 }
